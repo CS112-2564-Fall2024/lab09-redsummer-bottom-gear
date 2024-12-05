@@ -18,10 +18,10 @@ import static cs112.lab09.Constants.MAP_VIEW_TITLE;
 
 public class MapController {
     @FXML
-    ImageView imageUSAMap;
+    ImageView imageView;
     public void initialize() {
         Image image = new Image(REDSUMMER_IMAGE_PATH);
-        imageUSAMap.setImage(image);
+        imageView.setImage(image);
     }
 
     public void handleCityStateButton1() throws IOException{
@@ -39,8 +39,10 @@ public class MapController {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.setTitle(CITY_VIEW_TITLE);
+
         CityController cityController = fxmlLoader.getController();
         cityController.initData(eventIndex);
+
         stage.show();
     }
 }
